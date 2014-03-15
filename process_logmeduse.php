@@ -1,6 +1,6 @@
 <?php
 	include("includes/header.php");
-	include("includes/config.php"); 
+	include("../health_config.php"); 
  
  
 if (strlen($_POST['time']) < 5)

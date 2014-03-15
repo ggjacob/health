@@ -1,7 +1,7 @@
 <?php
 
 include("includes/header.php");
-include("includes/config.php"); 
+include("../health_config.php"); 
 
 $medid = $_POST['medid'];	
 $medname = $_POST['medname'];	

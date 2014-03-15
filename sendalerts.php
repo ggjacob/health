@@ -91,7 +91,7 @@ else
 
 function sendMail($alertData) {
 	require_once "Mail.php";
-	require "../mailconfig.php";
+	require "../mailconfig2.php";
 
 	$subject = $alertData['alertname'];
 	$to = $alertData['sendto'];
@@ -128,7 +128,7 @@ function executeSQL($myQuery, $mode)
 	{ 
  
 		//get connection info for HealthTracker
-		include("includes/config.php");
+		include("../health_config.php");
 		
 		//make connection
 		mysql_connect($servername,$username,$password);

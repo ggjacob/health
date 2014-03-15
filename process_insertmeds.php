@@ -1,6 +1,6 @@
 <?php
 include("includes/header.php");
-include("includes/config.php");
+include("../health_config.php");
 
 //used by form_editmeds.php and form_insertmeds.php
 $medname = $_POST['medname'];

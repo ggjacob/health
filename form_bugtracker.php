@@ -1,6 +1,6 @@
 <?php
 include("/includes/header.php");
-include("/includes/config.php");
+include("/../health_config.php");
 
 //used for Sourcepage info
 $url=$_SERVER['HTTP_REFERER'];

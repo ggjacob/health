@@ -4,7 +4,7 @@
 
 <?php
 //include("includes/header.php");
-include("includes/config.php"); 
+include("../health_config.php"); 
 //echo $servername.','.$username.','.$password;
  
 mysql_connect($servername,$username,$password);

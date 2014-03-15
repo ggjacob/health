@@ -51,7 +51,7 @@ else
 
 function sendMail($body) {
 	require_once "Mail.php";
-	require "mailconfig.php";
+	require "mailconfig2.php";
 	$subject = "Take Medicine Now";
 //	$from = "healthtrackalerts@gmail.com";
 //	$to = "7023306001@tmomail.net";
@@ -88,7 +88,7 @@ function executeSQL($myQuery, $mode)
 	{ 
  
 		//get connection info for HealthTracker
-		include("includes/config.php");
+		include("../health_config.php");
 		
 		//make connection
 		mysql_connect($servername,$username,$password);

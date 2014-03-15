@@ -1,6 +1,6 @@
 <?php
 include("includes/header.php");
-include("includes/config.php"); 
+include("../health_config.php"); 
 
 $medid = $_POST['medid'];
 echo "<a href=medlog.php>Back to Medicine List</a>";

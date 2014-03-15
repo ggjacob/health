@@ -2,7 +2,7 @@
 <div>
 <?php
 //include("includes/header.php");
-include("includes/config.php"); 
+include("../health_config.php"); 
  
 echo "<a href=medlog.php>Back to Medicine List</a>";
 $global_dbh = mysql_connect($servername, $username, $password)

@@ -1,5 +1,5 @@
 <?php
-	include("/includes/config.php"); 
+	include("/../health_config.php"); 
 	include("/includes/header.php"); 
 	
 ?>

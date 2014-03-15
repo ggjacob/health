@@ -2,7 +2,7 @@
 
 <?php
 include("/includes/header.php");
-include("/includes/config.php");
+include("/../health_config.php");
 mysql_connect($servername,$username,$password);
 mysql_select_db($database) or die( "Unable to select database"); 
 

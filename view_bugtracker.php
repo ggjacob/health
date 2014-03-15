@@ -1,6 +1,6 @@
 <?php
 include("includes/header.php");
-include("includes/config.php"); 
+include("../health_config.php"); 
  
 
 $global_dbh = mysql_connect($servername, $username, $password)
