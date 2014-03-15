@@ -1,0 +1,86 @@
+﻿body{margin: 0; padding: 0; /* background: url(images/bg.jpg) top-center no-repeat #ebebeb;*/ font-family: Arial, Helvetica CE, Sans-Serif;}
+    
+#intro {width: 100%; text-align:center; margin: 10px 0 120px 0;}
+
+#nav {width: 284px; height: 80px; background: url(images/nav.png) top left no-repeat; margin: 0 auto; margin-bottom: 15px;}
+#nav-services{display: block; width: 94px; height: 40px; float: left; text-indent: -10000px;}
+#nav-portfolio{display: block; width: 96px; height: 40px; float: left; text-indent: -10000px;}
+#nav-journal{display: block; width: 94px; height: 40px; float: left; text-indent: -10000px;}
+#nav-about{display: block; width: 94px; height: 40px; float: left; text-indent: -10000px;}
+#nav-contact{display: block; width: 96px; height: 40px; float: left; text-indent: -10000px;}
+#nav-twitter{display: block; width: 94px; height: 40px; float: left; text-indent: -10000px;}
+
+table { 
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: /*120px;*/ 100%;
+  /* Table reset stuff */
+  border-collapse: collapse; border-spacing: 0; 
+ /*border-spacing: 1;
+ background: grey;*/
+ text-align: center;
+}
+		
+td, th {  border: 0 none; height: 10px; background: #000;}
+			
+th {
+  /* Gradient Background */
+	background: linear-gradient(#333 0%,#444 100%);
+	color: #FFF; font-weight: bold;
+	height: 0px;
+}
+		
+td { background: #EEE; text-align: center; }
+
+/* Zebra Stripe Rows 
+		*/
+tr:nth-child(even) td { background: #EEE; } 
+tr:nth-child(odd) td { background: #FDFDFD; }
+
+
+/*used for medlog.php, to highlight pills that need to be taken*/
+td.expired{background:#FF0000 !important;
+font-weight: bold;
+color:#FFF;
+}
+
+
+/* First-child blank cells! */
+tr td:first-child, tr th:first-child { 
+	background: #FFF; 
+	font-style: italic;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: bottom;
+	padding-right: 1px;
+	width: 10%; 
+}
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(1) { 
+  border-radius: 15px 0 0 0; 
+  background: black;
+} 
+
+
+
+tr:first-child th:last-child { 
+  border-radius: 0 5px 0 0; 
+  background: black;
+}
+
+
+.checkbox, .radio {
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+
+input, textarea{font-family:arial,sans-serif;font-size:70%;color:#666;padding:5px;border:1px solid #004a80;outline:none;background:#f6f6f6}
+
+.footer {color: #AAA; font-size: 11px; margin: 0 0 15px 0; width: 100%; text-align: center;}

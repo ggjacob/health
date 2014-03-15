@@ -1,0 +1,46 @@
+<?php
+
+include("includes/nheader.php"); 
+
+//add radio box for cellphone providers, and other, to allow manual
+
+?>
+
+<h2>Bible Verse Reminder (beta)</h2>
+<font color=red><i>Last Updated: 3/8/2014</i></font>
+<!--
+<br>
+You will most likely receive a text message from the following address:
+<br>
+<img src="images/photo 1.PNG">
+<p>
+Simply add it to your cell contacts as 'Bible Reminder'
+<p>
+<img src="images/photo 2.PNG">
+<p>
+<img src="images/photo 3.PNG">
+-->
+<div id="accordion">
+
+
+<?php 
+//include ("menu_createreminder.php") 
+?>
+
+
+<?php include ("menu_purpose.php") ?>
+
+<?php include ("menu_auto_createreminder.php") ?>
+
+
+<?php include ("menu_disable.php") ?>
+
+
+<?php include ("menu_help.php") ?>
+
+<?php include ("menu_techused.php") ?>
+ 
+</div>
+ 
+<?php include("includes/nfooter.php"); ?>
+ 

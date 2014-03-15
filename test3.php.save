@@ -1,0 +1,80 @@
+<?php
+
+//create getalert.php page to get alerts to send based on config
+//create sendalert.php secret page that 'includes' the getalerts.php and sends alerts based on config
+
+//get connection info for HealthTracker
+include("includes/config.php");
+
+ 
+
+//make connection
+mysql_connect($servername,$username,$password);
+mysql_select_db($database) or die( "Unable to select database"); 
+
+//execute SQL to get items for alerting
+$query = "select medicinename, lastused, nextuse from medicinetypes 
+where date_add(lastused,interval 1 DAY) < now()";
+ 
+$result=mysql_query($query);
+$num=mysql_numrows($result); 
+if ($result === false) { echo "An error occurred."; }
+mysql_close();
+
+
+//echo $num;
+//if items for alerting, send alert for each
+if ($num > 0)
+	{
+		while ($i < $num) 
+		{
+			$medicinename=mysql_result($result,$i,"medicinename");
+			$lastused=mysql_result($result,$i,"lastused");
+			$nextuse=mysql_result($result,$i,"nextuse");
+			++$i;
+		}		
+
+		$lastused = date('m-d-Y H:i:s', strtotime($lastused));
+		$nextuse =  date('m-d-Y H:i:s', strtotime($nextuse));
+
+		$body = $medicinename.' --  LastUsed: '. $lastused.' --  NextUse: '.$nextuse;
+		
+
+		echo $body;
+		
+		//call email function
+		//sendMail($body);
+	}
+
+
+function sendMail($body) {
+	require_once "Mail.php";
+	$subject = "Take Medicine Now";
+	$from = "healthtrackalerts@gmail.com";
+	$to = "7027380688@mms.att.net";
+	$message = $body;
+	$host = "ssl://smtp.gmail.com";
+	$port = "465";
+	$username = "healthtrackalerts@gmail.com";
+	$password = "M3D1c!ne";
+	$headers = array ('From' => $from,
+		'To' => $to,
+		'Subject' => $subject);
+	$smtp = Mail::factory('smtp',
+		array ('host' => $host,
+                       'port' => $port,
+                       'auth' => true,
+                       'username' => $username,
+                       'password' => $password));
+        $mail = $smtp->send($to, $headers, $message);
+
+	if (PEAR::isError($mail)) 
+		{
+			echo('<p>' . $mail->getMessage() . '</p>');
+		} 
+	else 
+		{
+			echo('<p>Message successfully sent!</p><br>Message sent to: '.$to.', Body: '.$message.'');
+		}
+}
+?>
