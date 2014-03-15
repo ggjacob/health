@@ -1,6 +1,6 @@
 <?php
-include("/includes/header.php");
-include("/../health_config.php");
+include("includes/header.php");
+include("../health_config.php");
 
 //used for Sourcepage info
 $url=$_SERVER['HTTP_REFERER'];
@@ -22,5 +22,5 @@ Your Name: 		 <input type="text" name="username">
 <a href="view_bugtracker.php">View Bug/Enhancement List</a>
 <?php
 
-include ("/includes/footer.php");
+include ("includes/footer.php");
 ?>

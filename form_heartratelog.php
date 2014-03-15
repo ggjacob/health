@@ -1,6 +1,6 @@
 <?php
-	include("/../health_config.php"); 
-	include("/includes/header.php"); 
+	include("../health_config.php"); 
+	include("includes/header.php"); 
 	
 ?>
   
@@ -17,4 +17,4 @@ BPM: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<inpu
 <br>
 <a href=view_heartratelog.php>View Heartrate History</a>
 </font>
-<?php include("/includes/footer.php"); ?>
+<?php include("includes/footer.php"); ?>

@@ -1,8 +1,8 @@
 
 
 <?php
-include("/includes/header.php");
-include("/../health_config.php");
+include("includes/header.php");
+include("../health_config.php");
 mysql_connect($servername,$username,$password);
 mysql_select_db($database) or die( "Unable to select database"); 
 
@@ -39,5 +39,5 @@ mysql_close();
 
 echo "<b>Saving Info, please wait...<b>";
 header("Refresh: 1; URL=form_heartratelog.php"); 
-include("/includes/footer.php");
+include("includes/footer.php");
 ?>  

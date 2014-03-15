@@ -29,7 +29,7 @@
  
  function update_medlog($medid, $dateTime, $logtype, $dose)
 	{
-		include("/../health_config.php"); 
+		include("../health_config.php"); 
 		$datetime = date("Y-m-d h:i:s", strtotime($dateTime)); 
 		$query = "call update_medlog ($medid, '$datetime', '$logtype', '$dose')";
 		//echo $query;			

@@ -1,6 +1,6 @@
 <?php
-include("/includes/header.php");
-include("/../health_config.php"); 
+include("includes/header.php");
+include("../health_config.php"); 
  
 
 $global_dbh = mysql_connect($servername, $username, $password)
@@ -65,4 +65,4 @@ TRUE, "border='2'");
 //$url=$_SERVER['HTTP_REFERER'];
 echo "<a href=form_heartratelog.php>Back</a>";
 
-include "/includes/footer.php";?>
+include "includes/footer.php";?>

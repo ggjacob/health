@@ -1,5 +1,5 @@
 <?php
-include("/includes/header.php");
+include("includes/header.php");
 
 
 if(isset($_POST['username']))
@@ -40,7 +40,7 @@ else
 	}
 	
 
-include("/includes/footer.php");
+include("includes/footer.php");
 
 
 ?>
