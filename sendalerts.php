@@ -91,7 +91,7 @@ else
 
 function sendMail($alertData) {
 	require_once "Mail.php";
-	require "../mailconfig2.php";
+	require "../mailconfig.php";
 
 	$subject = $alertData['alertname'];
 	$to = $alertData['sendto'];
