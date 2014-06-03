@@ -74,7 +74,7 @@ if ($num > 0)
 				//if email failed then log as failure
 				$logResult = "Result Code = ".$resultCode."; Result Message = ".$resultMsg."; AlertConfigID = ".$alertconfigid;				
 				$myQuery = "insert into alertrecordslog (id, trantime, alertconfigid, emailresult) values (null, now(), $alertconfigid, '$logResult')";  
-				$sqlResult = executeSQL($myQuery);
+				$sqlResult = executeSQL($myQuery, 'none');
 				
 				echo $logResult;
 			}
@@ -95,32 +95,24 @@ function sendMail($alertData) {
 
 	$subject = $alertData['alertname'];
 	$to = $alertData['sendto'];
-	$message = $alertData['body'];
-	$headers = array ('From' => $from,
-		'To' => $to,
-		'Subject' => $subject);
-	$smtp = Mail::factory('smtp',
-		array ('host' => $host,
-                       'port' => $port,
-                       'auth' => $auth,//true,
-                       'username' => $username,
-                       'password' => $password));
-        $mail = $smtp->send($to, $headers, $message);
+	$message = $alertData['body']; 
+	$headers = array ('From' => $from, 'To' => $to, 'Subject' => $subject); 
+	$smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => $auth,
 
-	if (PEAR::isError($mail)) 
-		{
-			$resultCode = 0;
-			$resultMsg = $mail->getmessage();
-			$emailResult = array('resultCode'=>$resultCode, 'resultMsg' => $resultMsg);
-			return $emailResult;
-		} 
-	else 
+//true, 
+'username' => $username, 
+'password' => $password)); 
+$mail = $smtp->send($to, $headers, $message); 
+
+if (PEAR::isError($mail)) 
+{ $resultCode = 0; $resultMsg = $mail->getmessage(); $emailResult = array('resultCode'=>$resultCode, 'resultMsg' => $resultMsg); return $emailResult; } 
+else 
 		{
 			$resultCode = 1;
 			$resultMsg = 'Message successfully sent!<br>Message sent to: '.$to.', Body: '.$message;
 			$emailResult = array('resultCode'=>$resultCode, 'resultMsg' => $resultMsg);
 			return $emailResult;
-		}
+	       	}
 }
 
 
