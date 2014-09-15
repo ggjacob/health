@@ -53,15 +53,9 @@ function sendMail($body) {
 	require_once "Mail.php";
 	require "mailconfig2.php";
 	$subject = "Take Medicine Now";
-//	$from = "healthtrackalerts@gmail.com";
-//	$to = "7023306001@tmomail.net";
-	$to = "7027380688@mms.att.net";
-//	$to = "trevlaib@gmail.com";
+
+	$to = "";
 	$message = $body;
-//	$host = "ssl://smtp.gmail.com";
-//	$port = "465";
-//	$username = "healthtrackalerts@gmail.com";
-//	$password = "M3D1c!ne";
 	$headers = array ('From' => $from,
 		'To' => $to,
 		'Subject' => $subject);
