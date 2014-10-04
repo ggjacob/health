@@ -11,7 +11,7 @@
 	
  $i = 0;
  //echo $numdays;
- while ($i < $numdays)
+ while ($i <= $numdays)
 	{
 		${'date'.$i} = $_POST['date'.$i];
 		${'time'.$i} = $_POST['time'.$i];

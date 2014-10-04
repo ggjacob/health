@@ -21,13 +21,14 @@ else
 		//if dates are not the same then calculate the number of days
 		$interval = $datetime1->diff($datetime2);
 		$numdays = $interval->format('%a%');
+                echo $numdays;
 	}
 $intcount = 0;
 $dateShown = date('m-d-Y',strtotime($startDate));
 // echo 'date'.$intcount;
 // echo '<p>';
 // echo $startDate;
-while ($intcount < $numdays)
+while ($intcount <= $numdays)
 
 	{
 		echo '<b>';
@@ -41,7 +42,9 @@ while ($intcount < $numdays)
 		echo '<option value ="1" selected>USED</option>';
 		echo '<option value ="2" >SKIPPED</option></select><p>';
 		echo '</b>';
-		$startDate = date('Y-m-d', strtotime($startDate. ' + 1 days'));
+		$dateShown = date('Y-m-d', strtotime($startDate. ' + 1 days'));
+                $startDate = date('Y-m-d', strtotime($startDate. ' + 1 days'));
+                
 		//echo $startDate;
 		++$intcount;
 	}
